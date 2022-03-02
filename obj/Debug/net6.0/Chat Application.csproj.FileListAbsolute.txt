@@ -1,0 +1,61 @@
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\appsettings.json
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Chat Application.staticwebassets.runtime.json
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Chat Application.exe
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Chat Application.deps.json
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Chat Application.runtimeconfig.json
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Chat Application.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Chat Application.pdb
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.csproj.AssemblyReference.cache
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.AssemblyInfoInputs.cache
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.AssemblyInfo.cs
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.csproj.CoreCompileInputs.cache
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.RazorAssemblyInfo.cache
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.RazorAssemblyInfo.cs
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\scopedcss\bundle\Chat Application.styles.css
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\scopedcss\projectbundle\Chat Application.bundle.scp.css
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.csproj.CopyComplete
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\refint\Chat Application.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.pdb
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\Chat Application.genruntimeconfig.cache
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\obj\Debug\net6.0\ref\Chat Application.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\DnsClient.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\linux\native\libsnappy64.so
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\linux\native\libzstd.so
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\osx\native\libsnappy64.dylib
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\osx\native\libzstd.dylib
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\win\native\libzstd.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\win\native\snappy32.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\win\native\snappy64.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\AspNetCore.Identity.Mongo.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\AspNetCore.Identity.MongoDbCore.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\MongoDbGenericRepository.dll
+C:\Users\Hakan\source\repos\Chat Application\Chat Application\bin\Debug\net6.0\Blazored.LocalStorage.dll
