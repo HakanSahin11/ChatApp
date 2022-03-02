@@ -1,10 +1,13 @@
 ﻿@page "/index"
+@using Chat_Application.Help_Classes
 @using Chat_Application.Hubs
 @using Chat_Application.Utilities
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
 @using Microsoft.AspNetCore.SignalR.Client
-@inject NavigationManager NavigationManager
 @implements IAsyncDisposable
-@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavManager
+@inject UserService userService
+@inject ProtectedLocalStorage protectedStorage
 
 <PageTitle>Index</PageTitle>
 
@@ -39,32 +42,39 @@
 
     protected override async Task OnInitializedAsync()
     {
+        var user = await protectedStorage.GetAsync<string>("user");
+
+        if ( user.Value == null)
+        {
+            NavManager.NavigateTo("/", false ,false);
+            return;
+        }
         hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/chathub"))
+            .WithUrl(NavManager.ToAbsoluteUri("/chathub"))
             .Build();
 
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        hubConnection.On<string, string, string>("ReceiveMessage", (time, user, message) =>
         {
-            var encodedMsg = $"{user}: {message}";
+            var encodedMsg = $"{time} {user}: {message}";
             messages.Add(encodedMsg);
             StateHasChanged();
         });
 
-        await hubConnection.StartAsync();
-        
-            var user = await localStorage.GetItemAsync<string>("users");
-            ConnectionUtility.AllConnections.Add(hubConnection.ConnectionId, user);
+        await hubConnection.StartAsync();        
+
+        ConnectionUtility.AllConnections.Add(hubConnection.ConnectionId, user.Value);
     }
 
     private async Task Send()
     {
         if (hubConnection is not null)
         {
-            //  await hubConnection.SendAsync("SendMessage", userInput, messageInput);
-            var user = await localStorage.GetItemAsync<string>("users");
+            var user = await protectedStorage.GetAsync<string>("user");
             var msgTo = userInput;
-            await hubConnection.SendAsync("SendPrivateMessage", user, msgTo, messageInput);
 
+
+          //  await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+            await hubConnection.SendAsync("SendPrivateMessage", user.Value, msgTo, messageInput);
         }
     }
 

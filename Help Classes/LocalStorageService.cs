@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+/*
 using System.Text.Json;
 
 namespace Chat_Application.Help_Classes
@@ -33,3 +34,4 @@ namespace Chat_Application.Help_Classes
             Task.Run(() => _jsRuntime.InvokeVoidAsync("localStorage.removeItem", key));
     }
 }
+*/

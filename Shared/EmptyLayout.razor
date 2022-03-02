@@ -1,7 +1,31 @@
-﻿@inherits LayoutComponentBase
+﻿@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inherits LayoutComponentBase
+@inject ProtectedLocalStorage protectedStorage
+
+@inject NavigationManager NavManager
 
 <div class="main">    
     <div class="content px-4">
         @Body
     </div>
 </div>
+
+@code{
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            CheckUserLoggedIn();
+        }
+    }
+
+
+    private async void CheckUserLoggedIn()
+    {
+        if((await protectedStorage.GetAsync<string>("user")).Value != null)
+            NavManager.NavigateTo("/index", false ,false);
+    }
+
+}

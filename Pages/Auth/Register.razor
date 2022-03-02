@@ -1,9 +1,12 @@
 ﻿@page "/register"
 @using Chat_Application.Help_Classes 
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
 @using static Models.UserModel
 @inject UserService userService
 @inject IJSRuntime JsRuntime
 @layout EmptyLayout
+@inject NavigationManager NavManager
+@inject ProtectedLocalStorage protectedStorage
 
 <div class="col-md-4 offset-md-4 mt-2 card">
         <h4 class="card-header">Register</h4>
@@ -96,7 +99,14 @@
             if (task.Result == true)
             {
             await JsRuntime.InvokeVoidAsync("alert", "User Created!");
-            //   NavigationManager.NavigateTo(returnUrl);
+
+            var user = model.Username;
+                if (user.Contains("@"))
+                {
+                    user = await userService.GetUsername(user);
+                }
+                await protectedStorage.SetAsync("user", user);
+            NavManager.NavigateTo("/index");
 
             }
 

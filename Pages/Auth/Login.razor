@@ -1,10 +1,11 @@
 ﻿@page "/"
 @using static Models.Login
 @using Chat_Application.Help_Classes
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
 @inject UserService userService
 @inject IJSRuntime JsRuntime
 @inject NavigationManager NavManager
-@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject ProtectedLocalStorage protectedStorage
 
 
 @layout EmptyLayout
@@ -54,20 +55,22 @@
             {
                 await JsRuntime.InvokeVoidAsync("alert", "True");
 
-                await localStorage.SetItemAsync("users", model.Username);
+                var user = model.Username;
+                if (user.Contains("@"))
+                {
+                    user = await userService.GetUsername(user);
+                }
+                await protectedStorage.SetAsync("user", user);
 
                 NavManager.NavigateTo("/index", false ,false);
             }
             else
                 await JsRuntime.InvokeVoidAsync("alert", "False");
-            
-            
-
+                loading = false;
         }
         catch (Exception e)
         {
             await JsRuntime.InvokeVoidAsync("alert", e.Message);
-
         }
     }
 

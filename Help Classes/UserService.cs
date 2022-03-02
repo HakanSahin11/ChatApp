@@ -9,12 +9,9 @@ namespace Chat_Application.Help_Classes
     public class UserService
     {
         private UserCrud _user;
-       // private LocalStorageService _localStorage;
         public UserService(UserCrud user)
-    //    public UserService(UserCrud user, LocalStorageService localStorage)
         {
             _user = user;
-      //      _localStorage = localStorage;
         }
 
 
@@ -63,19 +60,7 @@ namespace Chat_Application.Help_Classes
                 if (Content.Username == SavedContent.Email || Content.Username == SavedContent.Username)
                 {
                     if (HashSalt(Content.Password, Convert.FromBase64String(SavedContent.Salt)).Pass == SavedContent.Password)
-                    {
-                        //_localStorage.SetItem("user", Content.Username).Wait();
-                        /*
-                        var task2 = _localStorage.GetItem<string>("user").Result;
-                                    _localStorage.GetItem<string>("user")
-                        var task3 = _localStorage.RemoveItem("user");
-                        task3.Wait();
-                        */
-
-              //          var task2 = _localStorage.GetItem("user");
-                        
                         return true;
-                    }
                 }
 
 
@@ -88,12 +73,11 @@ namespace Chat_Application.Help_Classes
             }
         }
 
-
-
-        public async Task<bool> test(AuthenticationStateProvider authenticationStateProvider)
+        public async Task<string> GetUsername(string email)
         {
-
-            return false;
+            var user = await _user.GetUserByEmail(email);
+            return user.Username;
+            
         }
     }
 }

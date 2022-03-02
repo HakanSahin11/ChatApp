@@ -25,12 +25,9 @@ builder.Services.AddSingleton<IDBElements>(x =>
     x.GetRequiredService<IOptions<DBElements>>().Value);
 
 builder.Services.AddBlazoredLocalStorage();
-
-
 builder.Services.AddSingleton<UserCrud>();
-builder.Services.AddSingleton<ConnectionCrud>();
 
-builder.Services.AddScoped<LocalStorageService>();
+//builder.Services.AddScoped<LocalStorageService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddSingleton<WeatherForecastService>();
 
@@ -39,7 +36,6 @@ builder.Services.AddResponseCompression(opts =>
     opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
         new[] { "application/octet-stream" });
 });
-
 
 var app = builder.Build();
 
@@ -51,21 +47,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
     app.MapDefaultControllerRoute();
 }
-
 app.UseHttpsRedirection();
-
-
-
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.MapBlazorHub();
 app.MapHub<ChatHub>("/chathub");
 app.MapFallbackToPage("/_Host");
-
 app.Run();
-
 app.UseResponseCompression();
 
 if (!app.Environment.IsDevelopment())

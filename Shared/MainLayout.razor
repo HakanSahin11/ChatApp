@@ -1,4 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inherits LayoutComponentBase
+@inject NavigationManager NavManager
+@inject ProtectedLocalStorage protectedStorage
 
 <PageTitle>Chat Application</PageTitle>
 
@@ -9,7 +12,7 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <button class="btn btn-primary" @onclick="LogOutSubmit">Log Out</button>
         </div>
 
         <article class="content px-4">
@@ -17,3 +20,32 @@
         </article>
     </main>
 </div>
+
+@code{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            CheckUserLoggedIn();
+        }
+    }
+
+
+    private async void CheckUserLoggedIn()
+    {
+        var yeet = "yeet";
+        /*
+        if(await localStorage.GetItemAsync<string>("users") != null)
+            NavManager.NavigateTo("/", false ,false);
+    */
+    }
+
+
+
+    private async void LogOutSubmit()
+    {
+        await protectedStorage.DeleteAsync("user");
+        NavManager.NavigateTo("/", false ,false);
+    }
+
+}
