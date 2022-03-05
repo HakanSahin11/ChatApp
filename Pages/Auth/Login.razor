@@ -44,28 +44,38 @@
 
     private bool loading;
     private Models.Login model = new Models.Login();
-
+    private int tries = 0;
     private async Task OnValidSubmit()
     {
         loading = true;
         try
         {
-            var result = await userService.LoginAsync(model);
-            if (result == true)
+            if (tries < 3)
             {
-                await JsRuntime.InvokeVoidAsync("alert", "True");
 
-                var user = model.Username;
-                if (user.Contains("@"))
+                var result = await userService.LoginAsync(model);
+                if (result == true)
                 {
-                    user = await userService.GetUsername(user);
-                }
-                await protectedStorage.SetAsync("user", user);
+                    await JsRuntime.InvokeVoidAsync("alert", "True");
 
-                NavManager.NavigateTo("/index", false ,false);
+                    var user = model.Username;
+                    if (user.Contains("@"))
+                    {
+                        user = await userService.GetUsername(user);
+                    }
+                    await protectedStorage.SetAsync("user", user);
+
+                    NavManager.NavigateTo("/index", false, false);
+                }
+                else
+                {
+                    await JsRuntime.InvokeVoidAsync("alert", "False");
+                    tries++;
+                }
             }
             else
-                await JsRuntime.InvokeVoidAsync("alert", "False");
+                    await JsRuntime.InvokeVoidAsync("alert", "Max Limit attempted");
+
                 loading = false;
         }
         catch (Exception e)

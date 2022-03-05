@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Chat_Application.Help_Classes;
 using static Chat_Application.Help_Classes.Salting;
+using MongoDB.Bson;
+
 namespace Chat_Application.Help_Classes
 {
     public class UserService
@@ -19,24 +21,18 @@ namespace Chat_Application.Help_Classes
         {
             try
             {
-                var userOut = new UserModel();
                 var salting = HashSalt(user.Password, new byte[0]);
-                userOut.Password = salting.Pass;
-                userOut.Salt = salting.Salt;
-
-                userOut.Gender = user.Gender;
-                userOut.Email = user.Email;
-                userOut.Birthday = user.Birthday;
-                userOut.Username = user.Username;
-
+                user.Salt = salting.Salt;
+                user.Password = salting.Pass;
+                user.Id = ObjectId.GenerateNewId();
                 var cryptoGraphy = new CryptoGraphy();
                 var task1 = Task.Run(() =>
                 {
-                    userOut.FirstName = cryptoGraphy.Encrypter(user.FirstName, user.Salt);
-                    userOut.LastName = cryptoGraphy.Encrypter(user.LastName, user.Salt);
+                    user.FirstName = cryptoGraphy.Encrypter(user.FirstName, user.Salt);
+                    user.LastName = cryptoGraphy.Encrypter(user.LastName, user.Salt);
                 });
                 task1.Wait();
-                await _user.Create(userOut);
+                await _user.Create(user);
                 return true;
             }
             catch
@@ -77,7 +73,23 @@ namespace Chat_Application.Help_Classes
         {
             var user = await _user.GetUserByEmail(email);
             return user.Username;
-            
+        }
+
+        public async Task<string> GetEmail(string username)
+        {
+            var user = await _user.GetUserByUsername(username);
+            return user.Email;
+        }
+
+        public async Task<bool> CheckIfUserExist(string username, string email)
+        {
+            if (_user.GetUserByEmail(email).Result != null)
+                return true;
+
+            if (_user.GetUserByUsername(username).Result != null)
+                return true;
+
+            return false;
         }
     }
 }

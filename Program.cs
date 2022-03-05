@@ -1,4 +1,3 @@
-using Chat_Application.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -29,7 +28,6 @@ builder.Services.AddSingleton<UserCrud>();
 
 //builder.Services.AddScoped<LocalStorageService>();
 builder.Services.AddScoped<UserService>();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddResponseCompression(opts =>
 {

@@ -1,7 +1,9 @@
-﻿@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+﻿@using Chat_Application.Help_Classes
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
 @inherits LayoutComponentBase
 @inject NavigationManager NavManager
 @inject ProtectedLocalStorage protectedStorage
+@inject UserService userService
 
 <PageTitle>Chat Application</PageTitle>
 
@@ -12,7 +14,12 @@
 
     <main>
         <div class="top-row px-4">
-            <button class="btn btn-primary" @onclick="LogOutSubmit">Log Out</button>
+            <span >
+                <label class="oi"> @GetUsername </label><a/>
+            </span>
+            <span>
+                <button class="btn btn-primary" @onclick="LogOutSubmit">Log Out</button>
+            </span>
         </div>
 
         <article class="content px-4">
@@ -30,14 +37,28 @@
         }
     }
 
+    private string GetUsername = "";
 
     private async void CheckUserLoggedIn()
     {
-        var yeet = "yeet";
-        /*
-        if(await localStorage.GetItemAsync<string>("users") != null)
-            NavManager.NavigateTo("/", false ,false);
-    */
+        var user = await protectedStorage.GetAsync<string>("user");
+        if ((user).Value == null)
+        {
+            NavManager.NavigateTo("/", false, false);
+
+        }
+        else
+        {
+            var userOut = user.Value;
+            if (userOut.Contains("@"))
+            {
+                userOut = await userService.GetEmail(userOut);
+            }
+
+            GetUsername = userOut;
+        }
+        StateHasChanged();
+
     }
 
 
@@ -47,5 +68,5 @@
         await protectedStorage.DeleteAsync("user");
         NavManager.NavigateTo("/", false ,false);
     }
-
+    
 }

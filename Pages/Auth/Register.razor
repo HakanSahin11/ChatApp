@@ -1,7 +1,7 @@
 ﻿@page "/register"
 @using Chat_Application.Help_Classes 
 @using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
-@using static Models.UserModel
+@using static Models.RegisterModel
 @inject UserService userService
 @inject IJSRuntime JsRuntime
 @layout EmptyLayout
@@ -12,6 +12,8 @@
         <h4 class="card-header">Register</h4>
         <div class="card-body">
             <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+                  <DataAnnotationsValidator />
+
                 <div class="form-group">
                     <label class="col-form-label-sm">Username</label>
                     <InputText @bind-Value="model.Username" class="form-control" />
@@ -29,8 +31,8 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label-sm">Confirm Password</label>
-                    <InputText @bind-Value="ConfirmPass" class="form-control" type="Password"/>
-                <!--    <ValidationMessage For="@(() => ConfirmPass)" /> -->
+                    <InputText @bind-Value="model.ConfirmPassword" class="form-control" type="Password"/>
+                    <ValidationMessage For="@(() => model.ConfirmPassword)" /> 
                 </div>
                 <div class="form-group">
                     <label class="col-form-label-sm">First Name</label>
@@ -71,20 +73,17 @@
 </div>
 
 @code {
-    private Models.UserModel model = new Models.UserModel();
+    private Models.RegisterModel model = new Models.RegisterModel();
     private bool loading;
-
-    public string? ConfirmPass { get; set; }
-
-
 
 
     private async void OnValidSubmit()
     {
+
         loading = true;
         try
         {
-            if (model.Password != ConfirmPass)
+            if (model.Password != model.ConfirmPassword)
             {
                 await JsRuntime.InvokeVoidAsync("alert", "Error, Passwords do not match");
                 return;
@@ -95,8 +94,14 @@
                 return;
             }
 
-            var task = Task.Run(() => userService.InsertuserAsync(model));
-            if (task.Result == true)
+            if(userService.CheckIfUserExist(model.Username, model.Email).Result == true)
+                await JsRuntime.InvokeVoidAsync("alert", "Username or email taken!");
+
+
+            var task = Task.Run(() => userService.InsertuserAsync(
+                new Models.UserModel(null, model.Email, model.Username, model.Password, model.FirstName, model.LastName, model.Gender, model.Birthday, null)));
+           
+                if (task.Result == true)
             {
             await JsRuntime.InvokeVoidAsync("alert", "User Created!");
 
@@ -121,6 +126,6 @@
         {
             loading = false;
             StateHasChanged();
-        }
+        } 
     }
 }
