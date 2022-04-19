@@ -11,22 +11,20 @@ mellem enheder, og da jeg yderligere har opsat lignede projekter.
 Som udgangspunkt vil applikationen tae inspiration fra eksisterende og populære chat 
 webapplikationer, såsom Discord og Facebook Messenger.
 
-Problemformulering:
-• Opsæt en web-baseret chat applikation i C# Blazor, som minimum indebærer de mest 
-  basale chat funktioner såsom live chat funktion, venneliste, osv.
-• Sikkerheden skal være en topprioritet, der skal anvendes GDPR reglerne, hvilket 
-  dermed alle følsomme data skal krypteres. 
-• Der skal opsættes en bruger registrerings form som vil tage brug af fuld CRUD.
-• Der skal yderligere anvendes en loginside som vil blive brugt til at fast beslutte hvilken 
-  bruger der er tale om. Denne side skal sikres via b.la begrænsninger.
-• Hver bruger skal som minimum være i stand til at tilføje, fjerne og skrive til andre 
-  brugere.
-• Hver bruger skal være i stand til at hente og redigere deres gemte oplysninger
-• Tage brug af cookies for godkendte login
-• Hot features:
-  o Se hvornår andre brugere er online
-  o Administrerende side
-  o Gruppe chat
-  o Video Chat
-  o Glemt Kodeord
-  o Email bekræftelse
+Problemformulering:  
+• Opsæt en web-baseret chat applikation i C# Blazor, som minimum indebærer de mest  
+ &ensp; basale chat funktioner såsom live chat funktion, venneliste, osv.  
+• Sikkerheden skal være en topprioritet, der skal anvendes GDPR reglerne, hvilket dermed alle følsomme data skal krypteres.  
+• Der skal opsættes en bruger registrerings form som vil tage brug af fuld CRUD.  
+• Der skal yderligere anvendes en loginside som vil blive brugt til at fast beslutte hvilken bruger der er tale om.  
+&ensp; Denne side skal sikres via b.la begrænsninger.  
+• Hver bruger skal som minimum være i stand til at tilføje, fjerne og skrive til andre brugere.  
+• Hver bruger skal være i stand til at hente og redigere deres gemte oplysninger  
+• Tage brug af cookies for godkendte login  
+• Hot features:  
+ &ensp; o Se hvornår andre brugere er online  
+ &ensp; o Administrerende side  
+ &ensp; o Gruppe chat  
+ &ensp; o Video Chat  
+ &ensp; o Glemt Kodeord  
+ &ensp; o Email bekræftelse  
