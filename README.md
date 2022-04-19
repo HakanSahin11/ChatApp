@@ -22,9 +22,9 @@ Problemformulering:
 - Hver bruger skal være i stand til at hente og redigere deres gemte oplysninger  
 - Tage brug af cookies for godkendte login  
 - Hot features:  
-- Se hvornår andre brugere er online  
-- Administrerende side  
-- Gruppe chat  
-- Video Chat  
-- Glemt Kodeord  
-- Email bekræftelse  
+  - Se hvornår andre brugere er online  
+  - Administrerende side  
+  - Gruppe chat  
+  - Video Chat  
+  - Glemt Kodeord  
+  - Email bekræftelse  
