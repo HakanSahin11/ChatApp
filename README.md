@@ -28,3 +28,10 @@ Problemformulering:
   - Video Chat  
   - Glemt Kodeord  
   - Email bekræftelse  
+
+
+![chatapp_index](https://user-images.githubusercontent.com/59696753/173582481-5c566ef1-2ff8-464b-9242-40a5a9d80a95.png)
+
+![chatapp_register](https://user-images.githubusercontent.com/59696753/173582498-2ee047dd-ae55-4ca4-9839-915173f6d297.png)
+
+![chatapp_login](https://user-images.githubusercontent.com/59696753/173582523-9da9ddf3-1dbc-421d-9097-1ff5e90d9bd9.png)
