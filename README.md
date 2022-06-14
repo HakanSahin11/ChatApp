@@ -1,4 +1,5 @@
-# ChatApp_Blazor
+# ChatApp Blazor
+
 Dette er et skole projekt som skal simulere arbejdsmetoden involveret til den enedelige svendeprøve.
 Selve opgaven består af et projekt og 2 rapporter, som indebærer en process og produkt rapport, for hele processen undervejs i projektet.
 Produktet er opsat i Blazor C# som indebærer en simpel live chat applikation med login authentication, kryptering for GDPR samt de mest basale funktioner.
