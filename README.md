@@ -28,6 +28,10 @@ Problemformulering:
   - Video Chat  
   - Glemt Kodeord  
   - Email bekræftelse  
+  
+Produkt + Process rapport for projektet:
+[Produkt Rapport - Chat Applikation.pdf](https://github.com/HakanSahin11/ChatApp_Blazor/files/8899894/Produkt.Rapport.-.Chat.Applikation.pdf)
+[Process Rapport - Chat Applikation.pdf](https://github.com/HakanSahin11/ChatApp_Blazor/files/8899895/Process.Rapport.-.Chat.Applikation.pdf)
 
 
 ![chatapp_index](https://user-images.githubusercontent.com/59696753/173582481-5c566ef1-2ff8-464b-9242-40a5a9d80a95.png)
